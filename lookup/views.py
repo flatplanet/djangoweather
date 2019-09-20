@@ -12,14 +12,14 @@ def home(request):
 			api = json.loads(api_request.content)
 		except Exception as e:
 			api = "Error..."
-
+		
 		if api[0]['Category']['Name'] == "Good":
 			category_description = "(0 -50) Air quality is considered satisfactory, and air pollution poses little or no risk."
 			category_color = "good"
 		elif api[0]['Category']['Name'] == "Moderate":
 			category_description = "(51-100) Air quality is acceptable; however, for some pollutants there may be a moderate health concern for a very small number of people who are unusually sensitive to air pollution."
 			category_color = "moderate"
-		elif api[0]['Category']['Name'] == "USG":
+		elif api[0]['Category']['Name'] == "Unhealthy for Sensitive Groups":
 			category_description = "(101 - 150) Although general public is not likely to be affected at this AQI range, people with lung disease, older adults and children are at a greater risk from exposure to ozone, whereas persons with heart and lung disease, older adults and children are at greater risk from the presence of particles in the air."
 			category_color = "usg"
 		elif api[0]['Category']['Name'] == "Unhealthy":
@@ -57,7 +57,7 @@ def home(request):
 		elif api[0]['Category']['Name'] == "Moderate":
 			category_description = "(51-100) Air quality is acceptable; however, for some pollutants there may be a moderate health concern for a very small number of people who are unusually sensitive to air pollution."
 			category_color = "moderate"
-		elif api[0]['Category']['Name'] == "USG":
+		elif api[0]['Category']['Name'] == "Unhealthy for Sensitive Groups":
 			category_description = "(101 - 150) Although general public is not likely to be affected at this AQI range, people with lung disease, older adults and children are at a greater risk from exposure to ozone, whereas persons with heart and lung disease, older adults and children are at greater risk from the presence of particles in the air."
 			category_color = "usg"
 		elif api[0]['Category']['Name'] == "Unhealthy":
